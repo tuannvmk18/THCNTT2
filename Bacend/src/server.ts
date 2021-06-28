@@ -81,6 +81,11 @@ io.on("connection", (socket: Socket) => {
   });
 });
 
+app.get('/getAll', async (req, res) => {
+  let responseJson = await data.find({});
+  res.json(responseJson);
+});
+
 httpServer.listen(PORT, () => {
   console.log("Server start at " + ip.address() + `:${PORT}`);
 });

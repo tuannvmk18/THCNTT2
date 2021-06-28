@@ -84,7 +84,7 @@ void setup() {
     USE_SERIAL.printf("[SETUP] WiFi Connected %s\n", ip.c_str());
 
     // server address, port and URL
-    socketIO.beginSSL("ws://powerful-bayou-13809.herokuapp.com/", 443, "/socket.io/?EIO=4");
+    socketIO.begin("192.168.1.9", 3000, "/socket.io/?EIO=4");
 
     // event handler
     socketIO.onEvent(socketIOEvent);
